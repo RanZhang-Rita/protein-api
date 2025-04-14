@@ -11,6 +11,11 @@ app.set('query parser', str => qs.parse(str));
 
 app.use(express.json());
 
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
+
 const pool = new Pool({
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
